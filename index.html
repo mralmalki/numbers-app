@@ -8,7 +8,7 @@
         <style>
             .column {
                 float: left;
-                width: 50%;
+                width: 33%;
                 padding: 10px;
                 box-sizing: border-box;
             }
@@ -41,6 +41,15 @@
                     <label id="primeCheckResult"></label>
                 </section>
             </div>
+            <div class="column">
+                <section>
+                    <h2>Caesar cipher</h2>
+                    <label>Text:</label>
+                    <input id="textToCipher" />
+                    <button onclick="cipher()">Cipher</button>
+                    <label id="cipher"></label>
+                </section>
+            </div>
         </div>
 
         <script>
@@ -60,6 +69,14 @@
                 const response = await fetch("https://primes-service-mralmalki.onrender.com/primes/" + n);
                 const result = await response.json();
                 document.getElementById("primeCheckResult").innerText = result;
+            }
+
+            async function cipher() {
+                const textToCipher = document.getElementById("textToCipher");
+                let plainText = textToCipher.value;
+                const response = await fetch("???" + plainText);
+                const result = await response.json();
+                document.getElementById("cipher").innerText = result;
             }
         </script>
     </body>
